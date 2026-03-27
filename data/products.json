@@ -1,122 +1,59 @@
 [
   {
-    "id": 1,
-    "name": "Issy & Co. Active Skin Tint",
-    "price": 699,
-    "category": "Makeup",
-    "description": "   Lightweight skin tint in shade ST3 that gives a very natural second-skin finish. This product has been gently used only a few times and still has about 90% of the product remaining. Perfect for everyday wear if you want light coverage that evens out the skin tone while still letting your natural skin show through.   ",
-    "seller": "Andrea Cruz"
+    "name": "Issy Active Skin Tint",
+    "price": 499,
+    "category": "Face",
+    "description": "Breathable oil-free skin tint.",
+    "postedDate": "2023-12-01",
+    "premiumProducts": false
   },
   {
-    "id": 2,
-    "name": "BLK Cosmetics Creamy All-Over Paint",
+    "name": "Issy Solar Balm",
     "price": 349,
-    "category": "Makeup",
-    "description": "   Multipurpose creamy pigment in the shade Fig that can be used on the cheeks, lips, and even eyelids. The texture blends smoothly and creates a soft flushed look on the skin. This item has only been used twice and is still in excellent condition despite not having the original box.   ",
-    "seller": "Maria Santos"
+    "category": "Face",
+    "description": "Sun protection for your cheeks.",
+    "postedDate": "2023-12-05",
+    "premiumProducts": false
   },
   {
-    "id": 3,
-    "name": "Happy Skin Lip Mallow Tint",
-    "price": 499,
-    "category": "Makeup",
-    "description": "Soft matte lip tint in the shade Vibin' that provides a comfortable velvet finish without drying the lips. The color is flattering for everyday makeup looks and works well with both natural and glam styles. The product has only been swatched once and sanitized properly before listing. ",
-    "seller": "Alex Reyes"
-  },
-  {
-    "id": 4,
-    "name": "Barenbliss Bloomatte Stay Confident Lip Cream",
-    "price": 299,
-    "category": "Makeup",
-    "description": "A long-lasting matte lip cream in shade 03 Peach Makes Perfect that delivers a smooth and pigmented finish in just one swipe. This lipstick is completely brand new, unopened, and still sealed. It has a lightweight texture that feels comfortable on the lips even after several hours of wear.",
-    "seller": "Jasmine Lee"
-  },
-  {
-    "id": 5,
-    "name": "Popique Soft Blur Powder Blush",
-    "price": 249,
-    "category": "Makeup",
-    "description": "   Powder blush in the shade Rosy Flush that creates a soft-focus blurred effect on the cheeks. The formula is finely milled and blends effortlessly, giving a natural healthy glow. The product has been lightly used but there are no dents or damage to the powder surface.   ",
-    "seller": "Claire Tan"
-  },
-  {
-    "id": 6,
-    "name": "Issy & Co. Brow Refiner",
+    "name": "Colourette Colourtint",
     "price": 399,
-    "category": "Makeup",
-    "description": "Precision eyebrow pencil in shade Ash Brown that helps create natural-looking brows with fine hair-like strokes. The formula glides smoothly without tugging on the skin and stays in place throughout the day. Approximately 80 percent of the product remains and the spoolie brush is still intact.",
-    "seller": "Nina Garcia"
+    "category": "Lips",
+    "description": "Multi-use oil-based tint.",
+    "postedDate": "2023-11-20",
+    "premiumProducts": false
   },
   {
-    "id": 7,
-    "name": "BLK Cosmetics Daydream Airy Matte Foundation",
-    "price": 599,
-    "category": "Makeup",
-    "description": "Airy matte liquid foundation in shade Vanilla that offers medium buildable coverage while maintaining a lightweight feel on the skin. It works well for normal to oily skin types and helps control shine. The bottle has only been used three times and the pump dispenser functions perfectly.",
-    "seller": "Samantha Ong"
+    "name": "Colourette Colourbalm",
+    "price": 349,
+    "category": "Lips",
+    "description": "Nourishing tinted lip balm.",
+    "postedDate": "2023-11-25",
+    "premiumProducts": false
   },
   {
-    "id": 8,
-    "name": "Happy Skin Dew Cooling Sunscreen + Makeup Base",
-    "price": 799,
-    "category": "Makeup",
-    "description": "   Hybrid sunscreen and makeup base with SPF 50+ that protects the skin while providing a refreshing cooling sensation. It also acts as a primer to help makeup apply more smoothly and last longer throughout the day. The tube is about 95 percent full and was opened just last month.   ",
-    "seller": "Test User"
+    "name": "GRWM Milk Tint",
+    "price": 349,
+    "category": "Cheeks",
+    "description": "Creamy multi-use product.",
+    "postedDate": "2023-12-10",
+    "premiumProducts": false
   },
   {
-    "id": 9,
-    "name": "Happy Skin Mini Mallows Tint",
-    "price": 199,
-    "category": "Lippie",
-    "description": "Moisturizing matte lip tint with a lightweight velvet finish that feels comfortable even after long hours of wear. The formula contains nourishing ingredients that help prevent dryness while still delivering strong pigment. Ideal for quick everyday touch-ups and natural-looking lip color.",
-    "seller": "Xyrelle"
+    "name": "GRWM Velvet Setting Powder",
+    "price": 549,
+    "category": "Face",
+    "description": "Weightless blurring powder.",
+    "postedDate": "2023-12-12",
+    "premiumProducts": false,
+    "priceDiscount": 450
   },
   {
-    "id": 10,
-    "name": "Vice Co. Dew-it-all Liquid Blush",
-    "price": 245,
-    "category": "Blush",
-    "description": "   Liquid blush that blends easily into the skin to create a dewy flushed look. A small amount goes a long way and can be layered depending on how intense you want the color to appear. The formula has a slightly earthy scent and dries down to a natural skin-like finish.   ",
-    "seller": "Hannah Montana"
-  },
-  {
-    "id": 11,
-    "name": "Colourette Coloursnap Lipstick",
-    "price": 329,
-    "category": "Makeup",
-    "description": "Highly pigmented lipstick that delivers vibrant color payoff in a single swipe. The creamy formula glides easily across the lips and feels comfortable without emphasizing dryness or cracks. Suitable for both casual everyday looks and more dramatic evening makeup styles.",
-    "seller": "Trisha Lim"
-  },
-  {
-    "id": 12,
-    "name": "Sunnies Face Airblush",
-    "price": 445,
-    "category": "Blush",
-    "description": "Cream blush that gives a soft diffused flush to the cheeks. The lightweight formula blends effortlessly using either fingers or a brush and melts naturally into the skin. Perfect for achieving a subtle youthful glow without looking overly powdery or heavy.",
-    "seller": "Carla Dizon"
-  },
-  {
-    "id": 13,
-    "name": "Careline Oil Control Powder",
-    "price": 180,
-    "category": "Makeup",
-    "description": "Compact powder designed to control excess oil and reduce shine throughout the day. The texture is smooth and lightweight so it sets foundation without looking cakey. Great for students or anyone who needs an affordable everyday powder for quick touch-ups.",
-    "seller": "Paolo Rivera"
-  },
-  {
-    "id": 14,
-    "name": "Detail Cosmetics Fresh Filter Foundation",
-    "price": 499,
-    "category": "Makeup",
-    "description": "   Medium coverage liquid foundation that provides a natural skin-like finish while helping blur imperfections. It blends well using either a sponge or brush and lasts several hours before needing a touch-up. The bottle has been used only once for testing purposes.   ",
-    "seller": "Lara Gomez"
-  },
-  {
-    "id": 15,
-    "name": "Ever Bilena Advance Lip Define",
-    "price": 220,
-    "category": "Lippie",
-    "description": "Long-wearing lip liner designed to define the lips and prevent lipstick from feathering outside the lip line. The pencil has a creamy texture that makes it easy to apply while still maintaining precise control. Ideal for pairing with matte or glossy lip products.",
-    "seller": "Mark Bautista"
+    "name": "Sunnies Face Fluffmatte",
+    "price": 495,
+    "category": "Lips",
+    "description": "Weightless modern matte lipstick.",
+    "postedDate": "2023-10-01",
+    "premiumProducts": true
   }
 ]

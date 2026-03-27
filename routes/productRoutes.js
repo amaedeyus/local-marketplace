@@ -21,4 +21,8 @@ router
 	.patch(productController.updateProduct)
 	.delete(productController.deleteProduct);
 
+router
+	.route('/product-category')
+	.get(productController.getProductCategory);
+
 module.exports = router;

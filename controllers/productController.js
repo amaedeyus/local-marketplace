@@ -146,4 +146,34 @@ exports.deleteProduct = async (req, res) => {
 			message: err,
 		});
 	}
+
+exports.getProductCategory = async (req, res) => {
+  try {
+    const stats = await Product.aggregate([
+      {
+        $match: { price: { $lt: 1000 } } // Price less than 1000
+      },
+      {
+        $group: {
+          _id: '$category',
+          avgPrice: { $avg: '$price' },
+          minPrice: { $min: '$price' },
+          maxPrice: { $max: '$price' },
+          products: { $push: '$name' }
+        }
+      },
+      {
+        $sort: { avgPrice: 1 } // Sort by average price
+      }
+    ]);
+
+    res.status(200).json({
+      status: 'success',
+      data: { stats }
+    });
+  } catch (err) {
+    res.status(404).json({ status: 'fail', message: err });
+  }
+};
+
 };
