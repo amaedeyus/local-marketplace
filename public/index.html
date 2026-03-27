@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Local Marketplace API</title>
+
+		<style>
+			body {
+				font-family: 'Georgia', 'Times New Roman', serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+
+				background: linear-gradient(
+					135deg,
+					#ffc0cb 0%,
+					#ff9ecf 40%,
+					#ffd6ea 100%
+				);
+				color: #7a1e4d;
+				text-align: center;
+			}
+
+			/* Card */
+			.container {
+				padding: 2.5rem 3rem;
+
+				background: rgba(255, 255, 255, 0.6);
+				border-radius: 20px;
+
+				backdrop-filter: blur(12px);
+
+				border: 2px solid rgba(255, 255, 255, 0.7);
+
+				box-shadow:
+					0 10px 25px rgba(255, 105, 180, 0.25),
+					inset 0 0 20px rgba(255, 255, 255, 0.4);
+			}
+
+			/* Title */
+			h1 {
+				font-size: 2.6rem;
+				margin-bottom: 1rem;
+				color: #c2185b;
+				letter-spacing: 1px;
+			}
+
+			/* Subtitle */
+			p {
+				font-size: 1.2rem;
+				color: #8e3b67;
+				opacity: 0.95;
+			}
+
+			/* Cute decorative sparkle */
+			.container::after {
+				content: '✿';
+				position: absolute;
+				font-size: 22px;
+				margin-left: 10px;
+				color: #ff69b4;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Welcome to Local Marketplace API</h1>
+			<p>Your local marketplace backend is running!</p>
+		</div>
+	</body>
+</html>
