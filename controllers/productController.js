@@ -24,7 +24,7 @@ exports.checkBody = (req, res, next) => {
 			message: 'Price must be a number',
 		});
 	}
-	
+
 	next();
 };
 
@@ -116,9 +116,14 @@ exports.createProduct = async (req, res) => {
 // PATCH /api/v1/products/:id
 exports.updateProduct = async (req, res) => {
 	try {
-		const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-			new: true,
-		});
+		const product = await Product.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{
+				new: true,
+				runValidators: true, // Added this based on documentation
+			},
+		);
 		res.status(200).json({
 			status: 'success',
 			data: { product },
@@ -146,34 +151,33 @@ exports.deleteProduct = async (req, res) => {
 			message: err,
 		});
 	}
+};
 
 exports.getProductCategory = async (req, res) => {
-  try {
-    const stats = await Product.aggregate([
-      {
-        $match: { price: { $lt: 1000 } } // Price less than 1000
-      },
-      {
-        $group: {
-          _id: '$category',
-          avgPrice: { $avg: '$price' },
-          minPrice: { $min: '$price' },
-          maxPrice: { $max: '$price' },
-          products: { $push: '$name' }
-        }
-      },
-      {
-        $sort: { avgPrice: 1 } // Sort by average price
-      }
-    ]);
+		try {
+			const stats = await Product.aggregate([
+				{
+					$match: { price: { $lt: 1000 } }, // Price less than 1000
+				},
+				{
+					$group: {
+						_id: '$category',
+						avgPrice: { $avg: '$price' },
+						minPrice: { $min: '$price' },
+						maxPrice: { $max: '$price' },
+						products: { $push: '$name' },
+					},
+				},
+				{
+					$sort: { avgPrice: 1 }, // Sort by average price
+				},
+			]);
 
-    res.status(200).json({
-      status: 'success',
-      data: { stats }
-    });
-  } catch (err) {
-    res.status(404).json({ status: 'fail', message: err });
-  }
-};
-
-};
+			res.status(200).json({
+				status: 'success',
+				data: { stats },
+			});
+		} catch (err) {
+			res.status(404).json({ status: 'fail', message: err });
+		}
+	};
