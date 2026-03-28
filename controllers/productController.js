@@ -1,60 +1,18 @@
 // controllers/productController.js
 const path = require('path');
-const APIFeatures = require('./../utils/apiFeatures');
 
 const Product = require('../model/productModel');
 // Middleware to check request body for create/update
-exports.checkBody = (req, res, next) => {
-	if (
-		!req.body.name ||
-		!req.body.price ||
-		!req.body.category ||
-		!req.body.description ||
-		!req.body.seller
-	) {
-		return res.status(400).json({
-			status: 'fail',
-			message:
-				'Missing required fields: name, price, category, description, seller',
-		});
-	}
-	if (typeof req.body.price !== 'number') {
-		return res.status(400).json({
-			status: 'fail',
-			message: 'Price must be a number',
-		});
-	}
 
-	next();
-};
-
-// Middleware to check ID (async for MongoDB)
-exports.checkID = async (req, res, next, val) => {
-	console.log(`Product id is: ${val}`);
-
-	try {
-		const product = await Product.findById(val);
-		if (!product) {
-			return res.status(404).json({
-				status: 'fail',
-				message: 'Invalid ID',
-			});
-		}
-		next();
-	} catch (err) {
-		return res.status(400).json({
-			status: 'fail',
-			message: 'Invalid ID format',
-		});
-	}
-};
+const APIFeatures = require('./../utils/apiFeatures');
 
 exports.aliasTopProducts = (req, res, next) => {
 	req.query.limit = '3';
-	req.query.sort = '-ratingsAverage,price';
+	req.query.sort = '-price';
 	req.query.fields = 'name,price,category,description,seller';
 	next();
 };
+
 // GET /api/v1/products
 exports.getAllProducts = async (req, res) => {
 	try {
@@ -63,9 +21,7 @@ exports.getAllProducts = async (req, res) => {
 			.sort()
 			.limitFields()
 			.paginate();
-
 		const products = await features.query;
-
 		res.status(200).json({
 			status: 'success',
 			requestedAt: req.requestTime,
@@ -73,7 +29,7 @@ exports.getAllProducts = async (req, res) => {
 			data: { products },
 		});
 	} catch (err) {
-		res.status(404).json({
+		res.status(404).JSON({
 			status: 'fail',
 			message: err,
 		});
@@ -121,7 +77,6 @@ exports.updateProduct = async (req, res) => {
 			req.body,
 			{
 				new: true,
-				runValidators: true, // Added this based on documentation
 			},
 		);
 		res.status(200).json({
@@ -154,30 +109,37 @@ exports.deleteProduct = async (req, res) => {
 };
 
 exports.getProductCategory = async (req, res) => {
-		try {
-			const stats = await Product.aggregate([
-				{
-					$match: { price: { $lt: 1000 } }, // Price less than 1000
+	try {
+		const stats = await Product.aggregate([
+			{
+				$match: { price: { $lt: 1000 } },
+			},
+			{
+				$group: {
+					_id: { $toUpper: '$category' },
+					numProducts: { $sum: 1 },
+					avgPrice: { $avg: '$price' },
+					minPrice: { $min: '$price' },
+					maxPrice: { $max: '$price' },
 				},
-				{
-					$group: {
-						_id: '$category',
-						avgPrice: { $avg: '$price' },
-						minPrice: { $min: '$price' },
-						maxPrice: { $max: '$price' },
-						products: { $push: '$name' },
-					},
-				},
-				{
-					$sort: { avgPrice: 1 }, // Sort by average price
-				},
-			]);
-
-			res.status(200).json({
-				status: 'success',
-				data: { stats },
-			});
-		} catch (err) {
-			res.status(404).json({ status: 'fail', message: err });
-		}
-	};
+			},
+			{
+				$sort: { avgPrice: 1 },
+			},
+			// {
+			// $match: { _id: { $ne: 'EASY'}}
+			// }
+		]);
+		res.status(200).json({
+			status: 'success',
+			data: {
+				stats,
+			},
+		});
+	} catch (err) {
+		res.status(404).json({
+			status: 'fail',
+			message: err,
+		});
+	}
+};

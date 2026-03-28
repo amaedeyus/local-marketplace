@@ -3,26 +3,22 @@ const productController = require('../controllers/productController');
 
 const router = express.Router();
 
+router.route('/product-category').get(productController.getProductCategory);
+
 router
 	.route('/top-3-cheap')
 	.get(productController.aliasTopProducts, productController.getAllProducts);
-
-router.param('id', productController.checkID);
 
 // Product routes
 router
 	.route('/')
 	.get(productController.getAllProducts)
-	.post(productController.checkBody, productController.createProduct);
+	.post(productController.createProduct);
 
 router
 	.route('/:id')
 	.get(productController.getProduct)
 	.patch(productController.updateProduct)
 	.delete(productController.deleteProduct);
-
-router
-	.route('/product-category')
-	.get(productController.getProductCategory);
 
 module.exports = router;
